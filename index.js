@@ -3,19 +3,21 @@ var app = express();
 
 app.set('port', process.env.PORT || 3000);
 
-var exphbs = require('express3-handlebars')
-// ({ defaultLayout:'main', extname: '.hbs' });
+var exphbs = require('express3-handlebars');
 
 app.engine('.hbs', exphbs({extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
+app.use(express.static(__dirname + '/public'));
+
+var feature = require('./lib/feature.js');
 
 app.get('/', function(req, res){
-  res.render('home');
+  res.render('home', {code: feature.getFeature()});
 });
 
 app.get('/feature', function(req, res){
-  res.render('Feature');
+  res.render('feature');
 });
 
 app.use(function(err, req, res, next){
