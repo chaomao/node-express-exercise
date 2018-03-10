@@ -16,6 +16,11 @@ app.get('/', function(req, res){
   res.render('home', {code: feature.getFeature()});
 });
 
+app.get('/json', function(req, res){
+  res.type('application/json');
+  res.render('json');
+});
+
 app.get('/feature', function(req, res){
   res.render('feature');
 });
@@ -31,6 +36,7 @@ app.use(function(err, req, res, next){
   res.status(500);
   res.render('500')
 });
+
 
 app.listen(app.get('port'), function(){
   console.log('Express Start localhost:' + app.get('port'));
