@@ -8,6 +8,7 @@ var exphbs = require('express3-handlebars');
 app.engine('.hbs', exphbs({extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
+app.use(require('morgan')('dev'));
 app.use(express.static(__dirname + '/public'));
 
 var feature = require('./lib/feature.js');
