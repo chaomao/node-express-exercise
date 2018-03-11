@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "test-ut": "mocha test/ut",
-    "test-it": "mocha test/it",
+    "test-it": "mocha --exit test/it",
     "jshint": "gulp jshint"
   },
   "dependencies": {
