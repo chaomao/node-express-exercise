@@ -3,7 +3,7 @@ var app = express();
 
 app.set('port', process.env.PORT || 3000);
 
-var exphbs = require('express3-handlebars');
+var exphbs = require('express-handlebars');
 
 app.engine('.hbs', exphbs({extname: '.hbs'}));
 app.set('view engine', '.hbs');
