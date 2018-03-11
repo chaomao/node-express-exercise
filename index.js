@@ -26,6 +26,20 @@ app.get('/feature', function(req, res){
   res.render('feature');
 });
 
+var github = require('./lib/github');
+
+app.get('/github/:username', function(req, res){
+  github.userInfo(req.params.username,
+    function(data){
+      res.type('application/json').json(JSON.parse(data));
+    },
+    function(error){
+      console.log('error at github ' + error.message);
+      res.json(error.message);
+    }
+  )
+});
+
 app.use(function(err, req, res, next){
   console.error(err.stack);
   res.status(404);
