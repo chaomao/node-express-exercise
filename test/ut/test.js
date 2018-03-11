@@ -1,4 +1,4 @@
-var feature = require('../lib/feature.js');
+var feature = require('../../lib/feature.js');
 var expect = require('chai').expect;
 
 describe('Feature', function() {

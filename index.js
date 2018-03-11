@@ -42,3 +42,5 @@ app.use(function(err, req, res, next){
 app.listen(app.get('port'), function(){
   console.log('Express Start localhost:' + app.get('port'));
 });
+
+module.exports = app;
