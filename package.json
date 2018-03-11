@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "test-ut": "mocha test/ut",
+    "test-it": "mocha test/it",
+    "jshint": "gulp jshint"
+  },
   "dependencies": {
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0"
