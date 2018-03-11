@@ -37,7 +37,7 @@ app.get('/github/:username', function(req, res){
       console.log('error at github ' + error.message);
       res.json(error.message);
     }
-  )
+  );
 });
 
 app.use(function(err, req, res, next){
