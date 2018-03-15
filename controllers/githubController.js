@@ -18,7 +18,7 @@ module.exports = {
       });
     }).on('error', function(error) {
       console.log('error at github ' + error.message);
-      res.json(error.message);
+      res.json({message: error.message});
     });
   }
 };
